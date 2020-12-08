@@ -1,0 +1,54 @@
+// a program to sort the array into ascending or descending by user choice 
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{ int n,j,i,g,t;
+    printf("enter the size of the array\n");
+scanf(" %d",&n);
+int a[n];
+printf(" enter the elements of the array\n");
+for(i=0;i<n;i++)
+{
+    scanf(" %d",&a[i]);
+}
+printf(" if you want to sort the array in ascending order enter 1\n");
+printf(" if you want to sort the array in descending order enter 2\n");
+scanf(" %d",&g);
+if( g!=1 && g!=2)
+ exit(0);
+if(g==1)
+{
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i;j<n;j++)
+        {
+          if(a[i] > a[j] ) 
+          {
+              t= a[i];
+              a[i] =a[j];
+              a[j] = t;
+          }
+        }
+    }
+for(i=0;i<n;i++)
+   printf(" %d",a[i]);
+}
+if(g==2)
+{
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i;j<n;j++)
+        {
+          if(a[i] < a[j] ) 
+          {
+              t= a[i];
+              a[i] =a[j];
+              a[j] = t;
+          }
+        }
+    }
+for(i=0;i<n;i++)
+    printf(" %d",a[i]);
+}
+}
